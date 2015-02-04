@@ -52,3 +52,12 @@ Run
   ./Testcoind -daemon # to start the Testcoin daemon.
 Run
   ./Testcoind help # When the daemon is running, to get a list of RPC commands
+
+If you want to reduce size of binary files then
+1) Go to http://upx.sourceforge.net/#downloadupx
+2) Download the program according with your system
+3) Unpack the program program to binary files folder.
+4) Type in terminal
+./upx -9 BitcoinDarkd
+next
+./upx -9 BitcoinDark-qt

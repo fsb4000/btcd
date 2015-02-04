@@ -82,3 +82,12 @@ DOS prompt:
 cd \Testcoin\src
 mingw32-make -f makefile.mingw
 strip Testcoind.exe
+
+If you want to reduce size of binary files then
+1) Go to http://upx.sourceforge.net/#downloadupx
+2) Download the program according with your system
+3) Unpack the program program to binary files folder.
+4) Type in DOS prompt
+upx -9 BitcoinDarkd.exe
+next
+upx -9 BitcoinDark-qt.exe

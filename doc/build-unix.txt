@@ -151,3 +151,12 @@ exploit even if a vulnerability is found, you can take the following measures:
     RW- R-- RW-
 
     The STK RW- means that the stack is readable and writeable but not executable.
+
+If you want to reduce size of binary files then
+1) Go to http://upx.sourceforge.net/#downloadupx
+2) Download the program according with your system
+3) Unpack the program program to binary files folder.
+4) Type in terminal
+./upx -9 BitcoinDarkd
+next
+./upx -9 BitcoinDark-qt
