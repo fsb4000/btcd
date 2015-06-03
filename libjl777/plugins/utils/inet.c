@@ -25,7 +25,12 @@
 #include <string.h>
 #include <stdint.h>
 #include <errno.h>
+#ifndef _WIN32
 #include <netdb.h>
+#else
+#include <winsock2.h>
+#include <ws2tcpip.h> 
+#endif
 
 #endif
 #else

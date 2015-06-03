@@ -14,7 +14,11 @@
 #include <stdint.h>
 #include <string.h>
 #include <stdlib.h>
+#ifndef _WIN32
 #include <sys/mman.h>
+#else
+#include "mman.h"
+#endif
 #include "system777.c"
 #include "utils777.c"
 

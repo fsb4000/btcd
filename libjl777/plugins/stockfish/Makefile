@@ -160,6 +160,13 @@ ifeq ($(COMP),mingw)
 	LDFLAGS += -static-libstdc++ -static-libgcc
 endif
 
+ifeq ($(COMP),mxe)
+	comp=mxe
+	CXX=i686-w64-mingw32.static-g++
+	CXXFLAGS += -Wextra -Wshadow
+	LDFLAGS += -static-libstdc++ -static-libgcc
+endif
+
 ifeq ($(COMP),icc)
 	comp=icc
 	CXX=icpc

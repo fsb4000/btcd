@@ -1,10 +1,14 @@
-#include "mman-win.h"
+#include "mman.h"
 #include <io.h>
 #include <share.h>
 #include <errno.h>
 #include <string.h>
 #include <windows.h>
 #include <fcntl.h>
+#ifdef _WIN32
+#include <stdio.h>
+#include <inttypes.h>
+#endif
 
 int32_t os_supports_mappedfiles() { return(1); }
 char *OS_rmstr() { return("del"); }
@@ -22,7 +26,11 @@ void ensure_directory(char *dirname)
 {
     FILE *fp;
     if ( (fp= fopen(os_compatible_path(dirname),"rb")) == 0 )
+#ifndef _WIN32
         mkdir(dirname,511);
+#else
+        mkdir(dirname);
+#endif
     else fclose(fp);
 }
 

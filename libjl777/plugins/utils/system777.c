@@ -13,9 +13,13 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <unistd.h>
+#ifndef _WIN32
 #include <arpa/inet.h>
+#endif
 #include <sys/types.h>
+#ifndef _WIN32
 #include <sys/select.h>
+#endif
 #include <sys/time.h>
 #include "../includes/miniupnp/miniwget.h"
 #include "../includes/miniupnp/miniupnpc.h"

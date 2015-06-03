@@ -11,8 +11,20 @@
 #include <sys/types.h>
 #include <errno.h>
 #include <stdio.h>
+#ifndef _WIN32
 #include <sys/wait.h>
+#endif
 #include <stdlib.h>
+
+#ifdef _WIN32
+#include <io.h>
+#include <fcntl.h>
+#include <errno.h>
+int pipe(int filedes[2])
+{
+   return _pipe(filedes, 4096, O_BINARY);
+}
+#endif
 
 #define DAEMONFREE_MARGIN_SECONDS 13
 #define NUM_PLUGINTAGS 256
