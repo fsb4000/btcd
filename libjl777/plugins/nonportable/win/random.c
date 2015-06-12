@@ -3,6 +3,7 @@
 #include <wincrypt.h>
 #include <stdio.h>
 #include <process.h>
+#include <tlhelp32.h>
 
 int32_t OS_getppid() { 
     int pid, ppid = -1;

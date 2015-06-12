@@ -4,7 +4,7 @@ PLIBS := ../libs/libjl777.a ../libs/libminiupnpc.a ../nanomsg/.libs/libnanomsg.a
 
 LIBS= libs/libjl777.a nanomsg/.libs/libnanomsg.a libs/libminiupnpc.a -lpthread -lcurl -lm -liphlpapi -lws2_32 -lwsock32 libs/libmman.a -lz -lssp #-lssl -lcrypto
 
-CC=i686-w64-mingw32.static-gcc
+CC=x86_64-w64-mingw32.static-gcc
 CFLAGS=-Wall -O2  -pedantic -g -fPIC -I"mman-win32" -Iplugins -Iplugins/includes  -Iplugins/utils -Iincludes  -Iplugins/mgw -Iplugins/InstantDEX -Iplugins/sophia -Iplugins/ramchain -Iplugins/coins -Inanomsg/src -Inanomsg/src/utils -Iplugins/includes/libtom  -Iplugins/includes/miniupnp -I.. -I../includes -I../../includes -Wno-unused-function -fPIC -fvisibility=hidden -fstack-protector-all -Wstack-protector -D_FORTIFY_SOURCE=2 -D_WIN32 -DNN_EXPORTS -DSTATICLIB -DMINIUPNP_STATICLIB -DCURL_STATICLIB
 
 TARGET	= libjl777.a
@@ -65,7 +65,7 @@ _eth := rm agents/eth; $(CC) -o agents/eth -O2 $(PINCLUDES) two/eth.c $(PLIBS)
 
 _two := rm agents/two; $(CC) -o agents/two -O2 $(PINCLUDES) two/two.c $(PLIBS)
 
-_stockfish := cd stockfish; rm stockfish; make build COMP=mxe; cp stockfish ../agents; cd ..
+_stockfish := cd stockfish; rm stockfish; make build COMP=mxe64; cp stockfish ../agents; cd ..
 
 agents: plugins/agents/echodemo plugins/agents/stockfish plugins/cgi/api plugins/agents/nxt plugins/agents/two plugins/agents/eth plugins/agents/msc; \
 	cd plugins; \

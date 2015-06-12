@@ -162,11 +162,17 @@ endif
 
 ifeq ($(COMP),mxe)
 	comp=mxe
-	CXX=i686-w64-mingw32.static-g++
+	CXX=i686-w64-mingw32.static-gcc
 	CXXFLAGS += -Wextra -Wshadow
 	LDFLAGS += -static-libstdc++ -static-libgcc
 endif
 
+ifeq ($(COMP),mxe64)
+	comp=mxe64
+	CXX=x86_64-w64-mingw32.static-gcc
+	CXXFLAGS += -Wextra -Wshadow
+	LDFLAGS += -static-libstdc++ -static-libgcc
+endif
 ifeq ($(COMP),icc)
 	comp=icc
 	CXX=icpc
